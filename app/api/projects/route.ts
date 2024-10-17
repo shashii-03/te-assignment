@@ -86,7 +86,9 @@ export async function PUT(req: NextRequest) {
         })
     } catch (error) {
         return NextResponse.json({
-            msg: "Error while updating project"
+            msg: "Error while updating project",
+            error: error
+
         }, {
             status: 500
         })

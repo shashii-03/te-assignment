@@ -15,14 +15,13 @@ type proejctType = {
     isActive: boolean
 
 }
-export default function ({ params }: { params: { id: number } }) {
+export default function EditProject({ params }: { params: { id: number } }) {
     const [project, setProject] = useState<proejctType | null>(null)
     const [laoding, setLoading] = useState(false)
     const router = useRouter();
 
     useEffect(() => {
         setLoading(true)
-        //api/projects/id?id=11
         axios.get(`/api/projects/id?id=${params.id}`).then(r => {
             setProject(r.data.project)
             setLoading(false)
@@ -33,7 +32,7 @@ export default function ({ params }: { params: { id: number } }) {
         try {
             const projectWithId = { ...projectData, id: params.id }
             console.log(projectWithId)
-            await axios.put("/api/projects", projectWithId).then(r => {
+            await axios.put("/api/projects", projectWithId).then(_r => {
                 alert("Project updated Success")
                 router.push("/")
             })

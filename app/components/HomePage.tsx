@@ -53,9 +53,7 @@ const HomePage = () => {
     const handleAddProject = () => {
         router.push("/project/add")
     }
-    const handleEdit = (id: number) => {
 
-    }
 
     return (
         <div className="flex flex-col mx-auto p-4  bg-gradient-to-br from-purple-100 to-indigo-100 min-h-screen">
@@ -101,7 +99,7 @@ const HomePage = () => {
                                                 <TableCell>
                                                     <div className="flex flex-col sm:flex-row gap-2">
                                                         <Link href={`/project/edit/${project.id}`}>
-                                                            <Button variant="outline" onClick={() => handleEdit(project.id)} className="bg-indigo-100 hover:bg-indigo-200 text-indigo-700 border-indigo-300">Edit</Button>
+                                                            <Button variant="outline" className="bg-indigo-100 hover:bg-indigo-200 text-indigo-700 border-indigo-300">Edit</Button>
                                                         </Link>
                                                         <Button variant="destructive" onClick={() => handleDelete(project.id)} className="bg-red-500 hover:bg-red-600 text-white">Delete</Button>
                                                     </div>

@@ -5,7 +5,7 @@ import { createProjectInput } from "@/schema";
 import { useRouter } from "next/navigation";
 
 
-export default function () {
+export default function AddProject() {
     const router = useRouter();
     const handleFormSubmit = async (newProject: createProjectInput) => {
         try {
